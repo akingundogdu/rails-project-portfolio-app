@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PageLayout } from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProjectsGallery } from '@/components/projects/ProjectsGallery';
 import { ROUTES } from '@/types/navigation';
 
 /**
@@ -101,16 +102,38 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="py-16 text-center space-y-6">
-        <h2 className="text-3xl font-bold">Ready to Work Together?</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          I'm always interested in discussing new opportunities and interesting projects.
-        </p>
-        <Button size="lg" asChild>
-          <Link to={ROUTES.CONTACT}>Start a Conversation</Link>
-        </Button>
-      </div>
+              {/* Featured Projects Section */}
+        <section className="py-16">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl font-bold">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Here are some of my most notable projects that showcase my skills and experience.
+            </p>
+          </div>
+          
+          <ProjectsGallery
+            showFilters={false}
+            maxItems={3}
+            variant="featured"
+          />
+          
+          <div className="text-center pt-8">
+            <Button variant="outline" size="lg" asChild>
+              <Link to={ROUTES.PROJECTS}>View All Projects</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <div className="py-16 text-center space-y-6">
+          <h2 className="text-3xl font-bold">Ready to Work Together?</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            I'm always interested in discussing new opportunities and interesting projects.
+          </p>
+          <Button size="lg" asChild>
+            <Link to={ROUTES.CONTACT}>Start a Conversation</Link>
+          </Button>
+        </div>
     </PageLayout>
   );
 };
