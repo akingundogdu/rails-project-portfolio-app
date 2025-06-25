@@ -1,0 +1,45 @@
+<h2>New Contact Message Received</h2>
+
+<p>You have received a new <%= @contact_message.message_type_label.downcase %> through your portfolio contact form.</p>
+
+<div class="message-details">
+  <h3>Message Details</h3>
+  
+  <div class="detail-row">
+    <span class="detail-label">From:</span>
+    <span class="detail-value"><strong><%= @contact_message.name %></strong> &lt;<%= @contact_message.email %>&gt;</span>
+  </div>
+  
+  <div class="detail-row">
+    <span class="detail-label">Subject:</span>
+    <span class="detail-value"><%= @contact_message.subject %></span>
+  </div>
+  
+  <div class="detail-row">
+    <span class="detail-label">Type:</span>
+    <span class="detail-value"><%= @contact_message.message_type_label %></span>
+  </div>
+  
+  <div class="detail-row">
+    <span class="detail-label">Priority:</span>
+    <span class="detail-value">
+      <span class="priority-badge <%= @contact_message.priority? ? 'priority-high' : 'priority-medium' %>">
+        <%= @contact_message.priority? ? 'High' : 'Normal' %>
+      </span>
+    </span>
+  </div>
+  
+  <div class="detail-row">
+    <span class="detail-label">Received:</span>
+    <span class="detail-value"><%= @contact_message.created_at.strftime("%B %d, %Y at %I:%M %p") %></span>
+  </div>
+</div>
+
+<div class="info-box">
+  <h3>Message Content</h3>
+  <p><%= simple_format(@contact_message.message) %></p>
+</div>
+
+<div style="text-align: center; margin: 30px 0;">
+  <p>You can reply directly to this email to respond to <%= @contact_message.name %>.</p>
+</div> 

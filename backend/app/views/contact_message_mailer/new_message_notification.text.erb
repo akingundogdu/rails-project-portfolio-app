@@ -1,0 +1,21 @@
+NEW CONTACT MESSAGE RECEIVED
+
+You have received a new <%= @contact_message.message_type_label.downcase %> through your portfolio contact form.
+
+MESSAGE DETAILS
+===============
+
+From: <%= @contact_message.name %> <<%= @contact_message.email %>>
+Subject: <%= @contact_message.subject %>
+Type: <%= @contact_message.message_type_label %>
+Priority: <%= @contact_message.priority? ? 'High' : 'Normal' %>
+Received: <%= @contact_message.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+
+MESSAGE CONTENT
+===============
+
+<%= @contact_message.message %>
+
+---
+
+You can reply directly to this email to respond to <%= @contact_message.name %>. 

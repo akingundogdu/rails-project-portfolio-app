@@ -1,0 +1,110 @@
+# Ruby on Rails specific gitignore
+
+# Backend (Rails) ignores
+backend/.bundle
+backend/log/*
+backend/tmp/*
+backend/db/*.sqlite3
+backend/db/*.sqlite3-journal
+backend/public/system
+backend/coverage/
+backend/spec/tmp
+backend/.rspec_status
+backend/vendor/bundle/
+backend/node_modules/
+backend/yarn-error.log
+backend/yarn-debug.log*
+backend/.yarn-integrity
+
+# Rails specific
+backend/config/database.yml.bak
+backend/config/secrets.yml
+backend/config/master.key
+backend/config/credentials.yml.enc
+
+# Environment variables
+backend/.env
+backend/.env.local
+backend/.env.development.local
+backend/.env.test.local
+backend/.env.production.local
+
+# Frontend (React) ignores (for future phases)
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.pnpm-debug.log*
+frontend/lerna-debug.log*
+frontend/.vite-tmp/
+frontend/.cache/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Log files
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+
+# Security and sensitive files
+*.pem
+*.key
+*.crt
+*.p12
+*.keystore
+
+# Testing
+coverage/
+.nyc_output/
+.coverage/
+*.lcov
+
+# Deployment
+.vercel/
+.netlify/
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Cursor IDE specific files
+.cursor/
+.cursorrules
+
+# Miscellaneous
+.sass-cache/
+.connect.lock
+.typings/
+.angular/ 

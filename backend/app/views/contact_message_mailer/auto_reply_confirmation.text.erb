@@ -1,0 +1,31 @@
+THANK YOU FOR YOUR MESSAGE!
+
+Hi <%= @contact_message.name %>,
+
+Thank you for reaching out through my portfolio contact form. I've received your message and I appreciate you taking the time to get in touch.
+
+YOUR MESSAGE SUMMARY
+====================
+
+Subject: <%= @contact_message.subject %>
+Type: <%= @contact_message.message_type_label %>
+Submitted: <%= @contact_message.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+
+WHAT HAPPENS NEXT?
+==================
+
+• I typically respond to messages within 24-48 hours
+<% if @contact_message.priority? %>• Since this is a <%= @contact_message.message_type_label.downcase %>, I'll prioritize my response<% else %>• I'll review your message and get back to you as soon as possible<% end %>
+• Please keep an eye on your inbox (and spam folder) for my reply
+
+IN THE MEANTIME, FEEL FREE TO:
+=============================
+
+• Check out my latest projects on my portfolio
+• Connect with me on LinkedIn or GitHub  
+• Follow my blog for updates on my work
+
+Thanks again for your interest!
+
+Best regards,
+Your Name 
